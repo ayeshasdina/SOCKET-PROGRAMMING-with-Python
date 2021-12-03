@@ -6,7 +6,7 @@ import os
 import socket
 import threading
 
-# IP =  "192.168.1.101" #"localhost"
+
 IP = "localhost"
 PORT = 4450
 ADDR = (IP,PORT)
