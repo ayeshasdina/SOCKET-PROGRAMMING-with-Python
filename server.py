@@ -38,20 +38,9 @@ def handle_client (conn,addr):
 
             conn.send(send_data.encode(FORMAT))
 
-        elif cmd == "CREATE":
-            files = os.listdir(SERVER_PATH)
-            fileName = data[1]
 
 
-            if fileName in files: ##  condition if file already exist in the server.
-                send_data += "File exist."
-            else:
-                buff = b"ABCD \n"
-                with open(os.path.join(SERVER_PATH,fileName), 'wb') as temp_file: ##### creating the file
-                    temp_file.write(buff)
-                send_data += "File created"
-
-            conn.send(send_data.encode(FORMAT))
+            #conn.send(send_data.encode(FORMAT))
 
     print(f"{addr} disconnected")
     conn.close()
