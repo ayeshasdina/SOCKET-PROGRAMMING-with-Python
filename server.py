@@ -1,11 +1,12 @@
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+
 
 # Author : Ayesha S. Dina
-
 
 import os
 import socket
 import threading
-
 
 IP = "localhost"
 PORT = 4450
@@ -31,16 +32,12 @@ def handle_client (conn,addr):
         if cmd == "LOGOUT":
             break
 
-        elif cmd == "TASK":
+        elif cmd == "TASK": 
             send_data += "LOGOUT from the server.\n"
-            send_data += "CREATING new file on the server.\n"
-            send_data += "MULTITHREADING: handling multiple clients.\n"
 
             conn.send(send_data.encode(FORMAT))
 
 
-
-            #conn.send(send_data.encode(FORMAT))
 
     print(f"{addr} disconnected")
     conn.close()
