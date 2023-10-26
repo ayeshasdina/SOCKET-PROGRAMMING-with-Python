@@ -36,9 +36,7 @@ def main():
             client.send(cmd.encode(FORMAT))
             break
       
-        elif cmd == "CREATE":
-            print(f"{cmd}@{data[1]}")       ### two words are separated by @ character.
-            client.send(f"{cmd}@{data[1]}".encode(FORMAT))
+
 
 
     print("Disconnected from the server.")
